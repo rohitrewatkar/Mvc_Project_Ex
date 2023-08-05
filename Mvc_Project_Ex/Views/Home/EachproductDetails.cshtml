@@ -1,0 +1,173 @@
+﻿@model IEnumerable<Mvc_Project_Ex.Models.ProductDetails>
+
+@{
+    ViewBag.Title = "EachproductDetails";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    document.write('<base href="" + document.location+""/>');
+</script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/menu.css" rel="stylesheet" />
+<link href="~/Content/flexslider.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+
+<h3>Product Specification</h3>
+<div ng-controller=" MainCtrl">
+    @foreach (var x in Model)
+    {
+        <div class="panel panel-d">
+           <div class="panel-heading">@x.Mobname</div>
+            <div class="panel-body">
+                <div class="col-sm-6 col-md-6" style="color:blue">
+                    <a href="http://localhost:44324/ZoomImage/@x.Url" class="cloud-zoom" rel="adjustX0:10, adjustY:-4">
+                        <img src="~/images/@x.Url" width="300" height="400" />
+                    </a>
+                </div>
+
+                <div class="col-sm-9 col-md-6">
+                    <h4><span id="mobname" style="color:black"><b>MobileName</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.Mobname</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>Features</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.Features</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>Color</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.Colors</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>Sim_type</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.Sim_type</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>Model</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.Models</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>price</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.price</span></h5>
+
+                </div>
+            </div>
+
+            <div>
+
+                <a id="btn_add" href="@Url.Action("Add", "AddToCart", x)" class="btn btn-info btn-lg" style="margin-left:60px">
+                    <span class="glyphicon glyphicon-shoping-cart"></span>Add to card
+                </a>
+
+                <a id="btn_add" href="@Url.Action("Index", "Home", x)" class="btn btn-info btn-lg" style="margin-left:60px">
+                    <span class="glyphicon glyphicon-eye-opne"></span>Continue shoping
+                </a>
+                <br />
+                <br />
+
+            </div>
+
+        </div>}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Url)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Features)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Models)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Colors)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sim_type)
+                </th>
+                <th></th>
+            </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MobId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Features)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Models)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Colors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sim_type)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+        </table>*@

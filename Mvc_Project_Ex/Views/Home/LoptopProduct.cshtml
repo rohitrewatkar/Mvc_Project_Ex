@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Mvc_Project_Ex.Models.Loptops>
+
+@{
+    ViewBag.Title = "LoptopProduct";
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+<h2>LoptopProduct</h2>
+
+<script type="text/javascript">
+    document.write('<base href="" + document.location+""/>');
+</script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/menu.css" rel="stylesheet" />
+<link href="~/Content/flexslider.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+
+<h3>Product Specification</h3>
+<div ng-controller=" MainCtrl">
+    @foreach (var x in Model)
+    {
+        <div class="panel panel-d">
+            <div class="panel-heading">@x.lopname</div>
+            <div class="panel-body">
+                <div class="col-sm-6 col-md-6" style="color:blue">
+                    <a href="http://localhost:44324/ZoomImage/@x.LopUrl" class="cloud-zoom" rel="adjustX0:10, adjustY:-4">
+                        <img src="~/images/@x.LopUrl" width="300" height="400" />
+                    </a>
+                </div>
+
+                <div class="col-sm-9 col-md-6">
+                    <h4><span id="mobname" style="color:black"><b>LoptopName</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.lopname</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>ModelNo</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.LopModel</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>Details</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.LopDetails</span></h5>
+
+                    <h4><span id="mobname" style="color:black"><b>price</b></span></h4>
+                    <h5><span id="mobname" style="color:red">@x.Lopprice</span></h5>
+
+                </div>
+            </div>
+
+            <div>
+
+                <a id="btn_add" href="@Url.Action("Addloptop", "AddToCart", x)" class="btn btn-info btn-lg" style="margin-left:60px">
+                    <span class="glyphicon glyphicon-shoping-cart"></span>Add to card
+                </a>
+
+                <a id="btn_add" href="@Url.Action("Index", "Home", x)" class="btn btn-info btn-lg" style="margin-left:60px">
+                    <span class="glyphicon glyphicon-eye-opne"></span>Continue shoping
+                </a>
+                <br />
+                <br />
+
+            </div>
+
+        </div>}
+</div>

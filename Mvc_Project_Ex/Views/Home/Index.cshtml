@@ -1,0 +1,167 @@
+﻿@model IEnumerable<Mvc_Project_Ex.Models.Mobiles>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="keywords" content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <script>
+    addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+    </script>
+    <script src=""></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/menu.css" rel="stylesheet" />
+
+
+<body>
+    <div class="row">
+        @*@foreach (var m in Model)
+            {
+                <br />
+                <br />
+                <div class="col-md-3">
+                    <div class="row">
+                        <h4><span id="mobilename" style="color:darkred" @m.Mobname></span></h4>
+                        <p>
+                            <span class="glyphicon glyphicon-heart" style="color:red;pointer-events:fill"
+                                  contextmenu="Added to wish list"></span>
+
+                        </p>
+                    </div>
+                    <a href="@Url.Action("EachproductDetails","Home",m)">
+                        <img class="a.photo" src="~/img/@m.url" style="overflow:hidden;position:relative; width:200px; cursor:pointer" />
+                    </a>
+                    <p>
+                        <a class="btn btn-default" href="">view More &raquo;</a>
+                    </p>
+                    <p>
+                        <span class="glyphicon glyphicon-shopping-cart" style="color:green"></span>
+                    </p>
+                </div>
+            }*@
+    </div>
+
+    @*The Slider section*@
+
+ 
+  
+    @*Top Product*@
+    <div class="ads-grid py-sm-5 py-4">
+        <div class="container py-xl-4 py-lg-2">
+            <!-- tittle heading -->
+            <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+                <span>O</span>ur
+                <span>N</span>ew
+                <span>P</span>roducts
+            </h3>
+            <!-- //tittle heading -->
+            <div class="row">
+                <!-- product left -->
+                <div class="agileinfo-ads-display col-lg-12">
+                    <div class="wrapper">
+                        <!-- first section -->
+                        <div class="product-sec1 px-sm-4 px-5 py-sm-5  py-3 mb-4">
+                            <h3 class="heading-tittle text-center font-italic">New Brand Mobiles</h3>
+                            <div class="row">
+                                <div class="col-md-12 product-men mt-6">
+                                    <div class="men-pro-item simpleCart_shelfItem">
+
+                                        <div class="item-info-product text-center border-top mt-4">
+
+                                            <div class="info-product-price my-2">
+
+                                            </div>
+                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                                <form action="#" method="post">
+                                                    <fieldset>
+                                                        <div class="row">
+                                                            @foreach (var m in Model)
+                                                            {
+
+                                                                <div class="col-md-4">
+                                                                    <div class="row">
+                                                                        <h4><span id="mobilename" style="color:darkred" @m.Mobname></span></h4>
+                                                                        <p>
+                                                                            <span class="glyphicon glyphicon-heart" style="color:red;pointer-events:fill"
+                                                                                  contextmenu="Added to wish list"></span>
+
+                                                                        </p>
+                                                                    </div>
+
+                                                                    <a href="@Url.Action("EachproductDetails", "Home", m)">
+                                                                        <img class="a.photo" src="~/images/@m.url" style="overflow:hidden;position:relative; width:200px; cursor:pointer" />
+                                                                    </a>
+                                                                    <p>
+                                                                        <a class="btn btn-default" href="">view More &raquo;</a>
+                                                                    </p>
+                                                                    <p>
+                                                                        <span class="glyphicon glyphicon-shopping-cart" style="color:green"></span>
+                                                                    </p>
+                                                                </div>
+
+                                                            }
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- middle section -->
+    <div class="join-w3l1 py-sm-5 py-4">
+        <div class="container py-xl-4 py-lg-2">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="join-agile text-left p-4">
+                        <div class="row">
+                            <div class="col-sm-7 offer-name">
+                                <h6>Smooth, Rich & Loud Audio</h6>
+                                <h4 class="mt-2 mb-3">Branded Headphones</h4>
+                                <p>Sale up to 25% off all in store</p>
+                            </div>
+                            <div class="col-sm-5 offerimg-w3l">
+                                <img src="~/images/off1.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5">
+                    <div class="join-agile text-left p-4">
+                        <div class="row ">
+                            <div class="col-sm-7 offer-name">
+                                <h6>A Bigger Phone</h6>
+                                <h4 class="mt-2 mb-3">Smart Phones 5</h4>
+                                <p>Free shipping order over $100</p>
+                            </div>
+                            <div class="col-sm-5 offerimg-w3l">
+                                <img src="~/images/off2.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- middle section -->
+</body>

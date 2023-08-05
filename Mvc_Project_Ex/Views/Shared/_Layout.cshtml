@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "_Layout";
+    //Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<!-- header-bottom-->
+<div class="header-bot">
+    <div class="container">
+        <div class="row header-bot_inner_wthreeinfo_header_mid">
+            <!-- logo -->
+            <div class="col-md-3 logo_agile">
+                <h1 class="text-center">
+                    <a href="index.html" class="font-weight-bold font-italic">
+                        <img src="~/images/logo2.png" alt=" " class="img-fluid">Electro Store
+                    </a>
+                </h1>
+            </div>
+            <!-- //logo -->
+            <!-- header-bot -->
+            <div class="col-md-9 header mt-4 mb-md-0 mb-4">
+                <div class="row">
+                    <!-- search -->
+                    <div class="col-10 agileits_search">
+                        <form class="form-inline" action="#" method="post">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+                            <button class="btn my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <!-- //search -->
+                    <!-- cart details -->
+                    <div class="col-2 top_nav_right text-center mt-sm-0 mt-2">
+                        <div class="wthreecartaits wthreecartaits2 cart cart box_1">
+                            <ul class=" nav navbar-nav">
+                                <li class="active">
+                                    <a href="@Url.Action("Myorder","AddToCart")" class="btn btn-info btn-lg">
+                                        <span class="glyphicon glyphicon-shopping-cart" style="color:yellow"></span>
+                                        cart<span class="badge">@Session["count"]</span>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </div>  <!-- //cart details -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //header-bottom -->
+@*vartical Menu*@
+
+<!-- navigation -->
+<div class="navbar-inner">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="agileits-navi_search">
+                <form action="#" method="post">
+                    <select id="agileinfo-nav_search" name="agileinfo_search" class="border" required="">
+                        <option value="">All Categories</option>
+                        <option value="Televisions">Televisions</option>
+                        <option value="Headphones">Headphones</option>
+                        <option value="Computers">Computers</option>
+                    </select>
+                </form>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto text-center mr-xl-5">
+                    <li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
+                        <a class="nav-link" href="@Url.Action("Index","Home")">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("EachproductDetails","Home")">Producta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("","Home")">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("EachproductDetails","Home")">Info</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("","Home")">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("","Home")">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- //navigation -->
+<div class="container-fluid">
+    <div class="side-body">
+        @RenderBody();
+    </div>
+</div>
